@@ -1,0 +1,7 @@
+python-sounddevice
+pyserial
+matplotlib
+numpy
+cobs
+python-opencv
+pip install --pre betterproto[compiler]

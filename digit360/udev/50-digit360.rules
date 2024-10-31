@@ -1,0 +1,30 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# DIGIT360 HUB 3.1
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="2833", ATTRS{idProduct}=="6500", GROUP="plugdev", MODE="0666"
+SUBSYSTEMS=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="6500", GROUP="plugdev", MODE="0666"
+
+# DIGIT360 HUB 2.0
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="2833", ATTRS{idProduct}=="6502", GROUP="plugdev", MODE="0666"
+SUBSYSTEMS=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="04b4", ATTRS{idProduct}=="6502", GROUP="plugdev", MODE="0666"
+
+# DIGIT360 Base 
+SUBSYSTEMS=="tty", ATTRS{idVendor}=="2833", ATTRS{idProduct}=="4001", GROUP="plugdev", MODE="0666"
+
+# DIGIT360 Audio
+SUBSYSTEMS=="sound", ATTRS{idVendor}=="2833", ATTRS{idProduct}=="4001", GROUP="plugdev", MODE="0664"
+SUBSYSTEMS=="sound",  MODE="0664"
+
+# DIGIT360 ICS
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="2833", ATTRS{idProduct}=="b015", GROUP="plugdev", MODE="0666"
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="2833", ATTRS{idProduct}=="b015", GROUP="plugdev", MODE="0666"
+
+# DIGIT360 DFU
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", GROUP="plugdev", MODE="0666"
+
+# DIGIT360 Aux Sensor 
+SUBSYSTEM=="tty" ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0060", GROUP="plugdev", MODE="0666" 

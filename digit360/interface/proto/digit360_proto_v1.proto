@@ -1,0 +1,172 @@
+// Copyright (c) Meta Platforms, Inc. and affiliates.
+// All rights reserved.
+
+// This source code is licensed under the license found in the
+// LICENSE file in the root directory of this source tree.
+
+syntax = "proto3";
+
+package digit360;
+
+enum LightingChannel
+{
+	CHANNEL_NONE = 0;
+	CHANNEL_1 = 1;
+	CHANNEL_2 = 2;
+	CHANNEL_3 = 3;
+	CHANNEL_4 = 4;
+	CHANNEL_5 = 5;
+	CHANNEL_6 = 6;
+	CHANNEL_7 = 7;
+	CHANNEL_8 = 8;
+	CHANNEL_ALL = 9;
+	CHANNEL_1ST_HALF = 10;
+	CHANNEL_2ND_HALF = 11;
+	CHANNEL_ALL_RESET = 12;
+}
+
+enum IMUDataType
+{
+	NONE_IMU = 0;
+	RAW = 1;
+	QUAT = 2;
+	EULER = 3;
+	AUX_IMU = 4;
+}
+
+enum GasHTDataType
+{
+	NONE_GHT = 0;
+	GAS = 1;
+	HUMIDITY = 2;
+	TEMPERATURE = 3;
+	ALL = 4;
+	AUX_GHT = 5;
+	
+}
+
+enum ResetType
+{
+	NONE_RESET = 0;
+	ICS_BOOTLOADER = 1;
+	MCU_RESET = 2;
+	NCU_RESET = 3;
+	MCU_BOOTLOADER = 4;
+}
+
+enum PressureConfigTypes
+{
+	NONE_PRESSURE_CONFIG = 0;
+	OVERSAMPLING_1X = 1;
+    OVERSAMPLING_2X = 2;
+    OVERSAMPLING_4X = 3;
+    OVERSAMPLING_8X = 4;
+    OVERSAMPLING_16X = 5;
+    OVERSAMPLING_32X = 6;
+    OVERSAMPLING_64X = 7;
+    OVERSAMPLING_128X = 8;
+	
+	IIR_FILTER_BYPASS = 9;
+	IIR_FILTER_COEFF_1 = 10;          
+	IIR_FILTER_COEFF_3 = 11;
+	IIR_FILTER_COEFF_7 = 12;
+	IIR_FILTER_COEFF_15 = 13;
+	IIR_FILTER_COEFF_31 = 14;
+	IIR_FILTER_COEFF_63 = 15;
+	IIR_FILTER_COEFF_127 = 16;
+}
+	
+	
+message LightingControl
+{
+	float alpha = 1;
+	LightingChannel channel = 2;
+	int32 r = 3;
+	int32 g = 4;
+	int32 b = 5;
+}
+
+message PressureControl
+{
+	PressureConfigTypes osr_t = 2;
+	PressureConfigTypes osr_p = 3;
+	PressureConfigTypes iir_t = 4;
+	PressureConfigTypes iir_p = 5;
+	bool shadow_iir_t_enable = 6;
+	bool shadow_iir_p_enable = 7;
+}
+
+message IMUData
+{
+	IMUDataType type = 1;
+	
+	uint32 ts = 2;
+	
+	float a = 3;
+	float b = 4;
+	float c = 5;
+	
+	float d = 6;
+	float e = 7;
+	float f = 8;
+	
+	float g = 9;
+	float h = 10;
+	float i = 11;
+}
+
+message GasHTData
+{
+	GasHTDataType type = 1;
+	
+	uint32 ts = 2;
+	
+	float a = 3;
+	float b = 4;
+	float c = 5;
+	
+	float d = 6;
+	float e = 7;
+	float f = 8;
+	
+	float g = 9;
+	float h = 10;
+	float i = 11;
+}
+
+message PressureAPData
+{
+	uint32 ts = 1;
+	bytes channel_a = 2;
+	bytes channel_b = 3;
+}
+
+message PressureData
+{
+	uint32 ts = 1;
+	float pressure = 2;
+	float temperature = 3;
+}
+
+message SystemData
+{
+	int32 version_minor = 1;
+	int32 version_major = 2;
+	bytes status = 3;
+}
+
+message Digit360Message
+{
+	oneof type
+	{
+		SystemData system_data = 1;
+		PressureData pressure_data = 2;
+		PressureAPData pressure_ap_data = 3;
+		GasHTData gasht_data = 4;
+		IMUData imu_data = 5;
+		PressureControl pressure_control = 6;
+		LightingControl lighting_control = 7;
+	}
+}
+		
+		
