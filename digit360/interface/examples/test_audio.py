@@ -9,7 +9,6 @@ import numpy as np
 import sounddevice as sd
 
 from digit360.interface.usb.usb import get_digit360_devices
-from digit360.interface.stream.audio import audio
 
 device_idx = 0
 
@@ -20,7 +19,11 @@ sample_rate = 48000
 duration = 10
 
 data = sd.rec(
-    int(duration * sample_rate), samplerate=sample_rate, channels=2, dtype="int16", device=device
+    int(duration * sample_rate), 
+    samplerate=sample_rate, 
+    channels=2, 
+    dtype="int16", 
+    device=device
 )
 
 print(f"Sampling for {duration} s...")
