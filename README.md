@@ -38,7 +38,7 @@ Roberto Calandra</sub>
     <a href="#-citing-digit-360"><img src="http://img.shields.io/badge/Cite-Us-orange.svg"></img></a>
 </p>
 
-Digit 360 is a modular platform which provides rich, multi-modal digital touch-sensing capabilities through a hemispherical compliant embodiment. Digit 360 contains high-resolution sensors (~8.3 million taxels) that respond to omnidirectional touch, capture multi- modal signals, and use on-device artificial intelligence to process the data in real time.
+Digit 360 is a modular platform which provides rich, multi-modal digital touch-sensing capabilities through a hemispherical compliant embodiment. Digit 360 contains high-resolution sensors (~8.3 million taxels) that respond to omnidirectional touch, capture multi-modal signals, and use on-device artificial intelligence to process the data in real time.
 
 <p align="center">
 <img src="./.assets/digit360_explode.gif" alt="animated" />
@@ -52,7 +52,7 @@ Apply for the [Call for Proposals](https://digit.ml/cfp).
 
 ## Digit 360 Overview
 
-The full description of the research methods are found in the [Digit 360 paper](https://ai.facebook.com/research/publications/digitizing-touch-with-an-artificial-multimodal-fingertip)
+The full description of the research methods is found in the [Digit 360 paper](https://ai.facebook.com/research/publications/digitizing-touch-with-an-artificial-multimodal-fingertip)
 
 <p align="center">
 <img src="./.assets/digit360_overview.png" width="300" />
@@ -89,7 +89,7 @@ ros2 launch d360 d360_min_launch.py
 
 ## RL Environments and Simulation
 
-To faciliate reinforcement learning environments, we provide a set of sectorized and convex meshes described in URDF formats found in the [meshes](./meshes/) folder.
+To facilitate reinforcement learning environments, we provide a set of sectorized and convex meshes described in URDF formats found in the [meshes](./meshes/) folder.
 
 <p align="center">
 <img src="./.assets/digit360_mesh1.gif" alt="animated" width="200"/>
