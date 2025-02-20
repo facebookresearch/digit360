@@ -27,6 +27,13 @@ cd digit360_ws/src/digit360/digit360/
 pip install -e .
 ```
 
+## Source the ws
+
+```
+cd digit360_ws
+source install/setup.bash
+```
+
 This creates the workspace, builds the source, and prepares everything for use with ROS2 nodes and topics.
 
 ## 🚀 Run Commands 
