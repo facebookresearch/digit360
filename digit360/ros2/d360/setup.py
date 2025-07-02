@@ -29,6 +29,7 @@ setup(
         'console_scripts': [
             "serial_io = d360.d360_serial_io:main",
             "image_pub_opencv = d360.d360_image_pub:main",
+            "image_pub_encode = d360.d360_image_encode:main",
             "audio_pub = d360.d360_audio_pub:main",
             "gas_pub = d360.d360_gas_pub:main",
         ],
