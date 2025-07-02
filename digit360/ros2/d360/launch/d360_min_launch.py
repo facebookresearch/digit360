@@ -29,7 +29,7 @@ def generate_d360_group_actions(namespace: str, desc: Digit360Descriptor, image_
         arguments=["--ros-args", "--log-level", "warn"],
     )
 
-    # Conditionally choose which image publisher to launch
+
     if image_pub_type == "raw":
         image_pub_node = Node(
             package="d360",
