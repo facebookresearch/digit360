@@ -41,12 +41,19 @@ To launch the Digit 360 package (d360), use the following command:
 
 This launches the minimal version of d360 - image, audio, and multimodal data topics,
 ```bash
-ros2 launch d360 d360_min_launch.py
+ros2 launch d360 d360_min_launch.py image_pub_type:='raw'
 ```
 
-To use with a Foxglove for visualizing data (foxglove+d360 minimal) version,
+By default the image_pub_type is encoded as follows.
+
+
 ```bash
-ros2 launch d360 d360_launch.py
+ros2 launch d360 d360_min_launch.py image_pub_type:='encoded'
+```
+
+To use with a Foxglove for visualizing data (foxglove+d360 minimal) version, by default
+```bash
+ros2 launch d360 d360_launch.py image_pub_type:='raw' 
 ```
 
 ### Sensor and Multimodal Specific Launches
