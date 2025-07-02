@@ -41,7 +41,7 @@ d360_min = IncludeLaunchDescription(
 def generate_launch_description() -> LaunchDescription:
 
     return LaunchDescription([
-        image_pub_type_arg,  # make sure we declare it here
+        image_pub_type_arg,
         foxglove,
         d360_min,
     ])
