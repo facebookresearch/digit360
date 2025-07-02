@@ -64,7 +64,6 @@ class MultiH264Bridge(Node):
         self.declare_parameter('num_d360', 8)
         sensor_count = self.get_parameter('num_d360').get_parameter_value().integer_value
 
-        # Initialize decoders for all possible topics
         for i in range(sensor_count):
             topic = f"d360_{i}/image_encode"
             try:
