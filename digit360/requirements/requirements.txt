@@ -1,4 +1,4 @@
-python-sounddevice
+sounddevice
 pyserial
 matplotlib
 numpy

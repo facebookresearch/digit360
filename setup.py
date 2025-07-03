@@ -29,5 +29,6 @@ setuptools.setup(
         "pyserial==3.5",
         "betterproto==2.0.0b5",
         "cobs==1.2.0",
+        "sounddevice"
     ],
 )
