@@ -13,16 +13,7 @@ from launch.actions import GroupAction
 from ament_index_python.packages import get_package_share_directory
 from digit360.interface.usb.usb import get_digit360_devices
 
-
-@dataclass
-class Digit360Descriptor:
-    serial: str
-    data: str
-    audio: str
-    ics: str
-    base_version: str
-    ics_version: str
-
+from digit360.interface.digit360 import Digit360Descriptor
 
 def generate_d360_group_actions(namespace: str, desc: Digit360Descriptor, image_pub_type: str) -> GroupAction:
     d360_serial_io = Node(
